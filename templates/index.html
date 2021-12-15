@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+  </head>
+  <body>
+
+    <table border="1" height="1000px" width="800px">
+      <tr valign="top" height="100%">
+        <td width="50%"><eg-component></eg-component></td>
+        <td>PDF Viewer...<div id="adobe-dc-view">PDF Viewer Here</div></td>
+      </tr>
+    </table>
+    
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script type="text/javascript">
+
+  var adobeDcSdkReady = false;
+  var adobeDCView;
+
+
+  document.addEventListener("adobe_dc_view_sdk.ready", function () {
+    adobeDCView = new AdobeDC.View({ clientId: "your-api-key-here", divId: "adobe-dc-view" });
+    adobeDcSdkReady = true;
+  });
+
+
+    </script>
+    
+  </body>
+</html>
